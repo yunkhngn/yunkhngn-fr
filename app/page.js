@@ -13,7 +13,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const analytics = app.name && typeof window !== 'undefined' ? getAnalytics(app) : null;
 
 export default function Home() {
   return (
